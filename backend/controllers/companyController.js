@@ -1,9 +1,14 @@
+const { pool } = require("../config/db");
+
 async function getCompanies(_req, res) {
-  res.status(501).json({
-    error: true,
-    message: "Companies endpoint is wired but not implemented yet.",
-    code: 501,
-  });
+  const query = `
+    SELECT symbol, name, sector
+    FROM companies
+    ORDER BY symbol ASC
+  `;
+
+  const [companies] = await pool.execute(query);
+  res.json(companies);
 }
 
 module.exports = {
