@@ -29,6 +29,10 @@ function Dashboard() {
       <Sidebar />
 
       <main className="flex-1 p-6 text-slate-200">
+          <h1 className="mb-6 text-2xl font-bold" style={labelFont}>
+            Dashboard
+          </h1>
+
         <TopMovers />
 
         <div className="mt-5 flex flex-wrap gap-2">
