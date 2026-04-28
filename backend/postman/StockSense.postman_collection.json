@@ -1,0 +1,118 @@
+{
+  "info": {
+    "_postman_id": "b4d9f4ce-7b4e-4f4d-bb32-0d9f8d7c2d51",
+    "name": "StockSense",
+    "description": "Postman collection for the StockSense API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Companies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/companies",
+          "host": ["{{base_url}}"],
+          "path": ["companies"]
+        },
+        "description": "Returns the list of tracked companies."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Stock Data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/data/{{symbol}}?range={{range}}",
+          "host": ["{{base_url}}"],
+          "path": ["data", "{{symbol}}"],
+          "query": [
+            {
+              "key": "range",
+              "value": "{{range}}"
+            }
+          ]
+        },
+        "description": "Returns OHLCV data, daily return, and moving average history for one symbol."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/summary/{{symbol}}",
+          "host": ["{{base_url}}"],
+          "path": ["summary", "{{symbol}}"]
+        },
+        "description": "Returns 52-week summary metrics for one symbol."
+      },
+      "response": []
+    },
+    {
+      "name": "Compare Stocks",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/compare?symbol1={{symbol1}}&symbol2={{symbol2}}",
+          "host": ["{{base_url}}"],
+          "path": ["compare"],
+          "query": [
+            {
+              "key": "symbol1",
+              "value": "{{symbol1}}"
+            },
+            {
+              "key": "symbol2",
+              "value": "{{symbol2}}"
+            }
+          ]
+        },
+        "description": "Returns aligned series for two stocks and their Pearson correlation."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Top Movers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/top-movers",
+          "host": ["{{base_url}}"],
+          "path": ["top-movers"]
+        },
+        "description": "Returns the latest gainers and losers."
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000/api"
+    },
+    {
+      "key": "symbol",
+      "value": "RELIANCE.NS"
+    },
+    {
+      "key": "range",
+      "value": "30"
+    },
+    {
+      "key": "symbol1",
+      "value": "RELIANCE.NS"
+    },
+    {
+      "key": "symbol2",
+      "value": "TCS.NS"
+    }
+  ]
+}
