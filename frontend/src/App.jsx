@@ -1,20 +1,19 @@
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import Dashboard from "./pages/Dashboard";
+import Compare from "./pages/Compare";
 import store from "./store";
-
-function ComparePlaceholder() {
-  return <div className="p-6 text-slate-100">Compare page placeholder</div>;
-}
 
 function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
         <div className="min-h-screen" style={{ background: "#0f1117" }}>
+          <Navbar />
           <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/compare" element={<ComparePlaceholder />} />
+            <Route path="/compare" element={<Compare />} />
           </Routes>
         </div>
       </BrowserRouter>
