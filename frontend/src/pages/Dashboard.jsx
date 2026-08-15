@@ -25,13 +25,16 @@ function Dashboard() {
   };
 
   return (
-    <div className="flex min-h-screen" style={{ background: "#0f1117" }}>
+    <div
+      className="flex h-screen overflow-hidden"
+      style={{ background: "#0f1117" }}
+    >
       <Sidebar />
 
-      <main className="flex-1 p-6 text-slate-200">
-          <h1 className="mb-6 text-2xl font-bold" style={labelFont}>
-            Dashboard
-          </h1>
+      <main className="ml-[220px] flex-1 overflow-y-auto p-6 pt-[88px] text-slate-200">
+        <h1 className="mb-6 text-2xl font-bold" style={labelFont}>
+          Dashboard
+        </h1>
 
         <TopMovers />
 

@@ -29,7 +29,7 @@ function Sidebar() {
 
   return (
     <aside
-      className="h-screen w-[220px] border-r border-slate-800 p-4"
+      className="fixed left-0 top-[72px] h-[calc(100vh-72px)] w-[220px] overflow-y-auto border-r border-slate-800 p-4"
       style={{ background: "#1a1a2e" }}
     >
       <div className="mb-4" style={labelFont}>
